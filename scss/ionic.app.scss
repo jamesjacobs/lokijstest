@@ -1,0 +1,243 @@
+$light:                           #fff !default;
+$subtle:                          #ddd !default;
+$bg1:                             #f0f1f2 !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #3399CC !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #89b029 !default;
+$energized:                       #fcb910 !default;
+$assertive:                       #d12918 !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #344a5f !default;
+$darker:                          #293f54 !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// Side menu
+.side-menu  {
+    background-color: $dark;
+
+    .bar.bar-dark {
+        background-color: $darker;
+    }
+
+    .item {
+        background-color: $dark !important;
+        border-color: $darker;
+        color: $light;
+
+        a {
+            background-color: $dark !important;
+        }
+    }
+}
+
+.slider {
+    height: 100%;
+}
+
+.slider-slide {
+    background-color: #fff;
+    color: #000;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.image {
+    vertical-align: middle;
+    max-width: 320px;
+    width: 100%;
+}
+
+.bg1 {
+    background-color: $bg1;
+}
+
+.delete {
+    color: #C4C4C4;
+    float: right;
+    font-size: 30px;
+    line-height: 1;
+    min-height: 31px;
+    padding-right: 0;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.code-card {
+    margin-top: 0px;
+}
+
+.code-card h1 {
+    @extend .animated;
+
+    -webkit-transition: color 1s;
+    -moz-transition: color 1s;
+    -ms-transition: color 1s;
+    -o-transition: color 1s;
+    transition: color 1s;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+.fade-in {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+
+.danger {
+    color: $assertive;
+}
+
+.meter {
+    height: 5px;
+    position: relative;
+    background: #C9E7FF;
+    overflow: hidden;
+    margin-bottom: 10px;
+    top: 44px;
+    z-index: 1;
+
+    span {
+        -webkit-transition: width 1s linear;
+        -moz-transition: width 1s linear;
+        -ms-transition: width 1s linear;
+        -o-transition: width 1s linear;
+        transition: width 1s linear;
+    }
+
+    .progress.progress-danger {
+        background-color: $assertive;
+    }
+
+    .progress.fade-out {
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+    }
+
+    .progress.fade-in {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        -moz-transition: none;
+        -ms-transition: none;
+        -o-transition: none;
+        transition: none;
+    }
+}
+
+.platform-android .meter {
+    top: 44px;
+}
+
+.platform-ios .meter {
+    top: 64px;
+}
+
+.progress {
+    background-color: $balanced;
+    display: block;
+    height: 100%;
+    opacity: 1;
+}
+
+// Fix tour button flash
+.button.ng-hide{
+    display:none;
+}
+
+/* Ionic overrides */
+.meter + .home.has-header {
+  top: 54px !important;
+}
+
+.platform-ios .meter + .home.has-header {
+  top: 74px !important;
+}
+
+
+.popup-title {
+    text-align: left;
+}
+
+// fix for black screen flash on ipad
+ion-nav-view {
+    background-color: $bg1;
+}
+[nav-view-transition][nav-view-direction] {
+    background-color: transparent;
+}
+
+/* Utility */
+.text--left {
+    text-align: left !important;
+}
+
+.text--center {
+    text-align: center !important;
+}
+
+.text--right {
+    text-align: right !important;
+}
+
+.boxed {
+    background: darken($stable, 5%);
+    padding: 10px;
+}

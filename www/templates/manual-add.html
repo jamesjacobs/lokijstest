@@ -1,0 +1,15 @@
+<ion-view view-title="Add code">
+    <ion-content padding="true">
+        <form ng-controller="AddCtrl" name="manualAddForm" id="manualAddForm">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="text" placeholder="Give your code a label" ng-model="label">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Secret key" ng-model="secret">
+                </label>
+            </div>
+            <button class="button button-block button-positive" ng-click="manualAdd()">Add</button>
+        </form>
+    </ion-content>
+</ion-view>

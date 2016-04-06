@@ -1,0 +1,24 @@
+<ion-view class="bg1">
+    <ion-nav-title>{{ viewTitle }}</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-plus-empty" ng-click="add()" ng-if="showHeaderAddButton"></button>
+    </ion-nav-buttons>
+    <div class="meter" class="meter" ng-if="showProgressBar">
+        <span ng-if="showProgressBarMeter" ng-class="progressBarStyling" ng-style="{'width': progressBarWidth}"></span>
+    </div>
+    <ion-content padding="true" class="home">
+        <div class="card code-card" ng-if="showNoCodesWarning">
+            <div class="item item-text-wrap">
+                <button ng-controller="AddCtrl" class="button button-block button-positive" ng-click="scan()">Scan barcode</button>
+                <p class="text--center">or</p>
+                <button ng-controller="AddCtrl" class="button button-block button-light" ng-click="manualAddOpen()">Manual entry</button>
+            </div>
+        </div>
+        <div class="card code-card" ng-repeat="code in codes track by $index">
+            <div class="item item-text-wrap">
+                <h1 ng-class="textWarning">{{code.code}}<button class="delete button button-icon ion-ios-close-empty" ng-click="delete(code)"></button></h1>
+                <p>{{code.label}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
